@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SobreLaTerapia from "../components/sections/SobreLaTerapia.astro";
+import Presentacion from "../components/sections/Presentacion.astro";
+import Biografia from "../components/sections/Biografia.astro";
+import PorQueElegirme from "../components/sections/PorQueElegirme.astro";
+import ContactoGratis from "../components/sections/ContactoGratis.astro";
+import FormularioContacto from "../components/sections/FormularioContacto.astro";
+---
+
+<BaseLayout>
+  
+  <Presentacion />
+
+  <SobreLaTerapia />
+  
+  <Biografia mostrarBoton={true} />
+
+  <PorQueElegirme />
+
+  <ContactoGratis />
+
+  <FormularioContacto />
+ 
+</BaseLayout>
