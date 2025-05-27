@@ -1,0 +1,9 @@
+# node / Astro
+node_modules/
+dist/
+.cache/
+*.log
+
+# sistema / IDE
+.DS_Store
+.vscode/
