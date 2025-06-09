@@ -33,7 +33,6 @@ export default function MaquinaDeEscribir({
   return (
     <h1 class={`whitespace-pre text-center font-serif ${clase}`}>
       {visibleText}
-      <span class="inline-block w-[1ch] animate-blink text-gray-800">|</span>
     </h1>
   );
 }

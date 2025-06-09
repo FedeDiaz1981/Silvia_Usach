@@ -16,11 +16,43 @@ export default function MobileNavbar() {
     };
   }, [open]);
 
+  useEffect(() => {
+    const currentPath = window.location.pathname.replace(/\/$/, '');
+
+    const links = {
+      '/biografia': document.getElementById('nav-biografia'),
+      '/honorarios': document.getElementById('nav-honorarios'),
+      '/contacto': document.getElementById('nav-contacto'),
+    };
+
+    const activeLink = links[currentPath];
+    if (activeLink) {
+      activeLink.classList.add(
+        "text-blue-700",
+        "font-bold",
+        "text-xl",
+        "transition-all",
+        "duration-300",
+        "ease-in-out"
+      );
+    }
+  }, []);
+
+
   return (
     <nav class="w-full bg-white shadow-md sticky top-0 z-50">
       <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row md:items-center md:justify-between relative">
         <div class="flex items-center justify-between">
-          <a href="/" class="text-xl font-semibold text-gray-800">Silvia Usach</a>
+          <a href="/" class="flex items-center gap-2">
+            <img
+              src="/images/logo-silvia.png"
+              alt="Logo Silvia Usach"
+              class="h-16 sm:h-20 w-auto max-w-none object-contain"
+            />
+
+
+          </a>
+
           <button
             class="md:hidden w-8 h-8 flex flex-col justify-between items-center relative z-50 focus:outline-none"
             onClick={() => setOpen(!open)}
@@ -39,13 +71,14 @@ export default function MobileNavbar() {
 
         {/* Menú */}
         <ul
-          class={`relative z-50 flex flex-col md:flex-row mt-4 md:mt-0 space-y-4 md:space-y-0 md:space-x-6 text-gray-700 text-base font-medium transition-all duration-300 ease-in-out overflow-hidden ${
-            open ? "max-h-96 opacity-100" : "max-h-0 opacity-0 md:max-h-screen md:opacity-100"
-          }`}
+          class={`relative z-50 flex flex-col md:flex-row mt-4 md:mt-0 space-y-4 md:space-y-0 md:space-x-6 text-gray-700 text-base font-medium transition-all duration-300 ease-in-out overflow-hidden ${open ? "max-h-96 opacity-100" : "max-h-0 opacity-0 md:max-h-screen md:opacity-100"
+            }`}
         >
-          <li><a href="/biografia" class="hover:text-blue-600">Biografía</a></li>
-          <li><a href="/honorarios" class="hover:text-blue-600">Honorarios</a></li>
-          <li><a href="/contacto" class="hover:text-blue-600">Contacto</a></li>
+          <li><a href="/biografia" id="nav-biografia" class="hover:text-blue-600">Biografía</a></li>
+          <li><a href="/honorarios" id="nav-honorarios" class="hover:text-blue-600">Honorarios</a></li>
+          <li><a href="/contacto" id="nav-contacto" class="hover:text-blue-600">Contacto</a></li>
+
+
         </ul>
       </div>
     </nav>

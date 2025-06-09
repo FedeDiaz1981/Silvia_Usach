@@ -1,26 +1,60 @@
 <section
-  class="bg-white py-20 px-6 text-center"
-  data-aos="fade-up"
-  data-aos-duration="800"
+  class="relative bg-white py-20 px-6 overflow-hidden"
+  data-aos="fade-in"
+  data-aos-duration="1000"
+  data-aos-easing="ease-in-out"
 >
-  <div class="max-w-3xl mx-auto">
-    <h2
-      class="font-serif text-3xl sm:text-4xl font-semibold text-gray-800 mb-6"
-    >
-      ¿Por qué elegirme?
-    </h2>
+  <!-- Contenedor general -->
+  <div
+    class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center relative z-10"
+  >
+    <!-- Imagen izquierda (solo desktop) -->
+    <div class="hidden md:block relative w-full h-[500px] overflow-hidden">
+      <img
+        src="/images/espacio-acogedor.jpg"
+        alt="Espacio acogedor"
+        class="w-full h-full object-cover object-center"
+      />
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-white via-white/70 to-transparent"
+      >
+      </div>
+    </div>
 
-    <p class="text-lg text-gray-700 leading-relaxed mb-10">
-      Mi enfoque terapéutico se basa en una escucha activa, empática y sin
-      juicios. Me comprometo con cada persona que acompaño, ofreciendo un
-      espacio seguro para explorar, comprender y transformar aquello que impide
-      avanzar. Trabajo con sensibilidad, claridad y respeto por los tiempos de
-      cada proceso.
-    </p>
-    <a
-      href="/honorarios"
-      class="inline-block px-8 py-3 bg-blue-600 text-white font-medium text-lg rounded-full shadow-lg hover:bg-blue-700 hover:scale-105 transition-all duration-300"
-      >Honorarios & Disponibilidad
-    </a>
+    <!-- Texto derecha -->
+    <div
+      class="text-center md:text-left"
+      data-aos="fade-left"
+      data-aos-delay="400"
+    >
+      <h2
+        class="font-serif text-3xl sm:text-4xl font-semibold text-gray-800 mb-6"
+      >
+        ¿Por qué elegirme?
+      </h2>
+      <p class="text-lg text-gray-700 leading-relaxed mb-8">
+        Mi enfoque terapéutico se basa en una escucha activa, empática y sin
+        juicios. Me comprometo con cada persona que acompaño, ofreciendo un
+        espacio seguro para explorar, comprender y transformar aquello que
+        impide avanzar. Trabajo con sensibilidad, claridad y respeto por los
+        tiempos de cada proceso.
+      </p>
+      <a
+        href="/honorarios"
+        class="px-6 py-3 bg-blue-600 text-white text-center font-medium text-base sm:text-lg rounded-full shadow-md hover:bg-blue-700 hover:scale-105 transition-all duration-300 leading-snug break-words w-full sm:w-auto"
+      >
+        Honorarios & Disponibilidad
+      </a>
+    </div>
+  </div>
+
+  <!-- Imagen de fondo mobile -->
+  <div class="absolute inset-0 md:hidden">
+    <img
+      src="/images/espacio-acogedor.jpg"
+      alt="Fondo acogedor"
+      class="w-full h-full object-contain object-center"
+    />
+    <div class="absolute inset-0 bg-white/80"></div>
   </div>
 </section>

@@ -15,8 +15,8 @@ const { mostrarBoton = false } = Astro.props;
       >
         Sobre mí
       </h2>
-      <p class="text-lg font-serif text-gray-700 leading-relaxed">
-        Soy Silvia Usach, psicóloga con más de 15 años de experiencia en el
+      <p class="text-lg font-serif text-gray-700 leading-relaxed mb-5">
+        Soy Silvia Usach, psicóloga con más de 20 años de experiencia en el
         acompañamiento terapéutico de personas adultas. Creo profundamente en el
         poder de la palabra, la escucha activa y el encuentro genuino para
         transformar aquello que duele.
@@ -24,39 +24,29 @@ const { mostrarBoton = false } = Astro.props;
 
       {
         mostrarBoton && (
-          <a
-            href="/biografia"
-            class="mt-6 inline-block px-6 py-3 bg-blue-600 text-white font-medium text-lg rounded-full shadow-md hover:bg-blue-700 hover:scale-105 transition-all duration-300"
-          >
-            Conocer más
-          </a>
+          <div class="flex justify-center mt-6">
+            <a
+              href="/biografia"
+              class="px-6 py-3 bg-blue-600 text-white font-medium text-lg rounded-full shadow-md hover:bg-blue-700 hover:scale-105 transition-all duration-300"
+            >
+              Conocer más
+            </a>
+          </div>
         )
       }
     </div>
 
-    <!-- Imagen -->
-    <!-- Imagen con símbolo de Psicología -->
+    <!-- Imagen artística -->
     <div
       data-aos="zoom-in"
       data-aos-delay="200"
       class="relative flex justify-center md:justify-end"
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 100 100"
-        class="w-72 h-72 md:w-96 md:h-96 text-blue-100 opacity-48 blur-[2px] drop-shadow-md"
-        fill="currentColor"
-      >
-        <text
-          x="50%"
-          y="50%"
-          text-anchor="middle"
-          dominant-baseline="middle"
-          font-size="150"
-        >
-          Ψ
-        </text>
-      </svg>
+      <img
+        src="/images/simbolo-psicologia-artistico.png"
+        alt="Símbolo de Psicología"
+        class="w-72 h-72 md:w-96 md:h-96 object-contain opacity-80 drop-shadow-lg animate-float"
+      />
     </div>
   </div>
 </section>
