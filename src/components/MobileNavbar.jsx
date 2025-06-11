@@ -44,13 +44,7 @@ export default function MobileNavbar() {
       <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row md:items-center md:justify-between relative">
         <div class="flex items-center justify-between">
           <a href="/" class="flex items-center gap-2">
-            <img
-              src="/images/logo-silvia.png"
-              alt="Logo Silvia Usach"
-              class="h-16 sm:h-20 w-auto max-w-none object-contain"
-            />
-
-
+            <img src="/images/Silvia-Usach-Logo.png" alt="Logo Silvia Usach" class="h-16 md:h-20"/>
           </a>
 
           <button

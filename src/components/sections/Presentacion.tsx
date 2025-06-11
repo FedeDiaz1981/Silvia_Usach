@@ -3,16 +3,20 @@ import MaquinaDeEscribir from "../MaquinaDeEscribir";
 
 export default function Presentacion() {
   const [showMatricula, setShowMatricula] = useState(false);
+  const [showSlogan, setShowSlogan] = useState(false);
   const [showBoton, setShowBoton] = useState(false);
 
   const handleFinishTyping = () => {
-    // Muestra la matrícula 500ms después de terminar de escribir
     setTimeout(() => {
       setShowMatricula(true);
-      // Muestra el botón 800ms después de mostrar la matrícula
+
       setTimeout(() => {
-        setShowBoton(true);
-      }, 800);
+        setShowSlogan(true);
+
+        setTimeout(() => {
+          setShowBoton(true);
+        }, 700);
+      }, 600);
     }, 500);
   };
 
@@ -33,19 +37,25 @@ export default function Presentacion() {
         />
 
         {showMatricula && (
-          <p class="mt-4 text-lg text-gray-600 font-sans animate-fade-in-soft delay-700">
-            Matricula 40522
+          <p class="mt-4 text-lg text-gray-600 font-sans animate-fade-in-soft">
+            Matrícula 40522
+          </p>
+        )}
+
+        {showSlogan && (
+          <p class="mt-3 text-xl text-gray-700 font-medium tracking-wide animate-fade-in-soft delay-200">
+            Terapia virtual de <span class="text-2xl">🇦🇷</span> al <span class="text-2xl">🌍</span>
           </p>
         )}
 
         {showBoton && (
           <a
             href="facetime:silvia.usach@example.com"
-            class="mt-6 animate-fade-in-soft delay-800
-                px-8 py-3 bg-blue-600 text-white font-medium text-lg rounded-full shadow-lg border-2 border-transparent
-                transition-all duration-300 ease-in-out
-                hover:bg-white hover:text-blue-600 hover:border-blue-600
-                active:bg-yellow-400 active:text-black active:border-yellow-500 active:shadow-xl"
+            class="mt-6 animate-fade-in-soft delay-300
+              px-8 py-3 bg-blue-600 text-white font-medium text-lg rounded-full shadow-lg border-2 border-transparent
+              transition-all duration-300 ease-in-out
+              hover:bg-white hover:text-blue-600 hover:border-blue-600
+              active:bg-yellow-400 active:text-black active:border-yellow-500 active:shadow-xl"
           >
             Hablamos?
           </a>
