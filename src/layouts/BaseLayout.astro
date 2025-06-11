@@ -7,26 +7,52 @@ import WhatsappFloat from "../components/WhatsappFloat.astro";
 
 <html lang="es">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Silvia Usach Terapia Online</title>
-    <meta
-      name="description"
-      content="Psicóloga especializada en terapia online. Acompañamiento profesional desde Argentina al mundo."
-    />
-    <slot name="head" />
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Silvia Usach Terapia Online</title>
+  <meta
+    name="description"
+    content="Psicóloga especializada en terapia online. Acompañamiento profesional desde Argentina al mundo."
+  />
+  <slot name="head" />
 
-  </head>
+  <!-- Estilos y fuentes -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+
+  <!-- Microdatos JSON-LD -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Silvia Usach",
+      "jobTitle": "Licenciada en Psicología",
+      "description": "Psicóloga especializada en terapia online. Acompañamiento profesional desde Argentina al mundo.",
+      "url": "https://silvia-usach.onrender.com/", 
+      "email": "mailto:silvia.usach@yahoo.com.ar",
+      "telephone": "+5491144110025",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Palermo",
+        "addressRegion": "CABA",
+        "addressCountry": "AR"
+      },
+    }
+  </script>
+</head>
+
+
   <WhatsappFloat />
   <body class="font-sans bg-gray-100 text-gray-900">
     <Navbar />
