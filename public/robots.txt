@@ -1,0 +1,10 @@
+# robots.txt para Silvia Usach - Terapia Online
+
+User-agent: *
+Disallow: /admin/
+Disallow: /backend/
+Disallow: /private/
+Allow: /
+
+# Sitemap
+Sitemap: https://tusitioweb.com/sitemap.xml
