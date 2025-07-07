@@ -7,51 +7,107 @@ import WhatsappFloat from "../components/WhatsappFloat.astro";
 
 <html lang="es">
   <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Silvia Usach Terapia Online</title>
-  <meta
-    name="description"
-    content="Psicóloga especializada en terapia online. Acompañamiento profesional desde Argentina al mundo."
-  />
-  <slot name="head" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Silvia Usach Terapia Online</title>
+    <meta
+      name="description"
+      content="Psicóloga especializada en terapia online. Acompañamiento profesional desde Argentina al mundo."
+    />
+    <slot name="head" />
 
-  <!-- Estilos y fuentes -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap"
-    rel="stylesheet"
-  />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
-    rel="stylesheet"
-  />
+    <!-- Estilos y fuentes -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="public/favicon.png" />
-  <link rel="shortcut icon" href="public/favicon.png" type="image/png" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="public/favicon.png" />
+    <link rel="shortcut icon" href="public/favicon.png" type="image/png" />
 
-  <!-- Microdatos JSON-LD -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Silvia Usach",
-      "jobTitle": "Licenciada en Psicología",
-      "description": "Psicóloga especializada en terapia online. Acompañamiento profesional desde Argentina al mundo.",
-      "url": "https://silvia-usach.onrender.com/", 
-      "email": "mailto:silvia.usach@yahoo.com.ar",
-      "telephone": "+5491144110025",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Palermo",
-        "addressRegion": "CABA",
-        "addressCountry": "AR"
-      },
-    }
-  </script>
-</head>
+    <!-- Microdatos JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Silvia Usach",
+        "jobTitle": "Licenciada en Psicología",
+        "description": "Psicóloga especializada en terapia online. Acompañamiento profesional desde Argentina al mundo.",
+        "url": "https://silvia-usach.onrender.com/",
+        "email": "mailto:silvia.usach@yahoo.com.ar",
+        "telephone": "+5491144110025",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Palermo",
+          "addressRegion": "CABA",
+          "addressCountry": "AR"
+        }
+      }
+    </script>
+    <!-- Animación custom -->
+    <style>
+      @keyframes growShrink {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.4);
+        }
+      }
+      .animate-growShrink {
+        display: inline-block;
+        animation: growShrink 2s infinite ease-in-out;
+      }
+    </style>
+    <style>
+      /* Animación tipo baliza */
+      .pulse-animation {
+        display: inline-block;
+        animation: pulse 1.8s infinite ease-in-out;
+      }
 
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.15);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      /* Movimiento sutil de la frase */
+      .wave-text {
+        display: inline-block;
+        animation: wave 3s ease-in-out infinite alternate;
+      }
+
+      @keyframes wave {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-3px);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
 
   <WhatsappFloat />
   <body class="font-sans bg-gray-100 text-gray-900">
@@ -63,6 +119,4 @@ import WhatsappFloat from "../components/WhatsappFloat.astro";
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" onload="AOS.init();"
     ></script>
   </body>
-
-
 </html>

@@ -48,6 +48,7 @@ module.exports = {
         sans: ['Inter', 'sans-serif'],
         serif: ['Playfair Display', 'serif'],
         script: ['"Dancing Script"', 'cursive'],
+        bebas: ['"Bebas Neue"', 'sans-serif'],
       },
     },
   },

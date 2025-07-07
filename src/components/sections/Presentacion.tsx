@@ -32,11 +32,11 @@ export default function Presentacion() {
           onFinish={handleFinishTyping}
         />
 
-        {showSlogan && (
+        {/* {showSlogan && (
           <div class="text-xl sm:text-2xl font-medium text-gray-700 tracking-wide animate-fade-in-soft delay-1000">
             Terapia virtual de <span class="text-2xl">🇦🇷</span> al <span class="text-2xl">🌍</span>
           </div>
-        )}
+        )} */}
 
         {showMatricula && (
           <p class="mt-4 text-lg text-gray-600 font-sans animate-fade-in-soft delay-700">
