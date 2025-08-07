@@ -28,7 +28,7 @@ export default function MobileNavbar() {
     const activeLink = links[currentPath];
     if (activeLink) {
       activeLink.classList.add(
-        "text-blue-700",
+        "text-[#1d3557]",
         "font-bold",
         "text-xl",
         "transition-all",
@@ -40,7 +40,7 @@ export default function MobileNavbar() {
 
 
   return (
-    <nav class="w-full bg-white shadow-md sticky top-0 z-50">
+    <nav class="w-full bg-[#dcf0fd] shadow-md sticky top-0 z-50">
       <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row md:items-center md:justify-between relative">
         <div class="flex items-center justify-between">
           <a href="/" class="flex items-center gap-2">

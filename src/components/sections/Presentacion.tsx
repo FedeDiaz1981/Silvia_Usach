@@ -16,35 +16,18 @@ export default function Presentacion() {
     }, 500);
   };
 
-  return (
-    <section class="relative min-h-screen flex flex-col items-center justify-center text-center px-4 bg-gradient-to-b from-white to-blue-50 overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-br from-blue-100 via-white to-blue-200 opacity-60 blur-2xl animate-pulse z-0"></div>
+  // bg-gradient-to-b from-white to-blue-50
 
-      <div class="relative z-10 flex flex-col items-center space-y-3">
-        <div className="text-5xl sm:text-6xl font-extrabold text-gray-800 drop-shadow-md mb-4">
+  return (
+    <section class="min-h-[400px] relative flex flex-row items-start justify-center text-center px-4  overflow-hidden pt-[9%]">
+      <div class="absolute inset-0 bg-gradient-to-br from-blue-100 via-white to-blue-200 opacity-60 blur-2xl animate-pulse z-0 hidden"></div>
+
+      <div class=" z-10 flex flex-col gap-20 sm:gap-[200px] pt-[8%] pb-[15%]">
+        <div className="text-5xl sm:text-6xl font-extrabold drop-shadow-md mb-4">
           Terapia Online
         </div>
-
-        <MaquinaDeEscribir
-          texto="Silvia Usach"
-          velocidad={120}
-          clase="text-4xl sm:text-4xl font-extrabold text-gray-800 drop-shadow-md mb-4"
-          onFinish={handleFinishTyping}
-        />
-
-        {/* {showSlogan && (
-          <div class="text-xl sm:text-2xl font-medium text-gray-700 tracking-wide animate-fade-in-soft delay-1000">
-            Terapia virtual de <span class="text-2xl">🇦🇷</span> al <span class="text-2xl">🌍</span>
-          </div>
-        )} */}
-
-        {showMatricula && (
-          <p class="mt-4 text-lg text-gray-600 font-sans animate-fade-in-soft delay-700">
-            Matricula 40522
-          </p>
-        )}
-
-        {showBoton && (
+       
+        <div class="hidden">
           <a
             href="facetime:silvia.usach@example.com"
             class="mt-6 animate-fade-in-soft delay-800
@@ -55,7 +38,7 @@ export default function Presentacion() {
           >
             Hablamos?
           </a>
-        )}
+        </div>
       </div>
     </section>
   );
