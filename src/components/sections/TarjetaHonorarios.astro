@@ -1,18 +1,19 @@
 <section
   class="py-20 px-6 text-center"
-  data-aos="fade-up"
-  data-aos-duration="1000"
+  aria-labelledby="titulo-honorarios"
 >
   <div class="max-w-2xl mx-auto">
     <h2
-      class="text-3xl sm:text-4xl font-serif font-semibold mb-4"
+      id="titulo-honorarios"
+      class="text-3xl sm:text-4xl font-serif font-semibold mb-4 text-gray-900"
       data-aos="fade-up"
       data-aos-delay="100"
     >
       Honorarios y disponibilidad
     </h2>
+
     <p
-      class="text-lg mb-10"
+      class="text-lg mb-10 text-gray-700"
       data-aos="fade-up"
       data-aos-delay="200"
     >
@@ -20,20 +21,23 @@
       sobre la modalidad disponible y cómo coordinar un encuentro.
     </p>
 
+    <!-- Tarjeta -->
     <div
-      class="shadow-xl rounded-2xl p-8 max-w-xl mx-auto mb-10 border border-gray-200 bg-white" 
+      class="shadow-xl rounded-2xl p-8 max-w-xl mx-auto mb-10 border border-gray-200 bg-white"
       data-aos="zoom-in"
       data-aos-delay="300"
+      role="region"
+      aria-label="Detalle de honorarios"
     >
-      <h3 class=" text-2xl font-bold  mb-2">Sesión individual</h3>
-      <p class="text-base mb-2">
+      <h3 class="text-2xl font-bold mb-2 text-gray-900">Sesión individual</h3>
+      <p class="text-base text-gray-700">
         Modalidad online a través de videollamada.
       </p>
-      <!-- <p class="text-gray-500 text-sm">Duración: 50 minutos</p> -->
     </div>
 
+    <!-- Detalles informativos -->
     <div
-      class="text-left max-w-xl mx-auto space-y-6 text-base mb-10"
+      class="text-left max-w-xl mx-auto space-y-6 text-base text-gray-700 mb-10"
     >
       <p data-aos="fade-up" data-aos-delay="500">
         Las sesiones se realizan de forma online para que puedas acceder desde
@@ -45,6 +49,7 @@
       </p>
     </div>
 
+    <!-- Botones de acción -->
     <div
       class="flex flex-col sm:flex-row gap-4 justify-center items-center"
       data-aos="fade-up"
@@ -52,26 +57,28 @@
     >
       <a
         href="/contacto"
-        class="px-6 py-3 rounded-full text-white  bg-[#1d3557] hover:bg-white hover:text-[#1d3557] border-2 
-               border-transparent transition-all duration-300 active:bg-yellow-400 
+        class="px-6 py-3 rounded-full text-white bg-[#1d3557] hover:bg-white hover:text-[#1d3557] border-2 
+               border-[#1d3557] transition-all duration-300 active:bg-yellow-400 
                active:text-black active:border-yellow-500"
-              
+        role="button"
+        aria-label="Ir al formulario de contacto"
       >
         Contacto
       </a>
+
       <a
         href="https://wa.me/5491123456789?text=Hola%20Silvia%2C%20quisiera%20consultar%20sobre%20una%20sesión"
         target="_blank"
         rel="noopener noreferrer"
+        class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-white bg-[#1d3557] 
+               border-2 hover:text-[#1d3557] transition-all duration-300 active:bg-yellow-400 
+               active:text-black active:border-yellow-500 shadow-md"
         role="button"
         aria-label="Abrir chat de WhatsApp con Silvia"
-        class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-white bg-[#1d3557] 
-               border-2 hover:text-[#1d3557] hover:bg-white transition-all duration-300 active:bg-yellow-400 
-               active:text-black active:border-yellow-500 shadow-md"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-5 w-5 "
+          class="h-5 w-5"
           fill="currentColor"
           viewBox="0 0 24 24"
         >

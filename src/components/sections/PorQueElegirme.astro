@@ -1,25 +1,26 @@
 <section
   class="relative overflow-hidden mb-10"
+  aria-labelledby="por-que-elegirme"
   data-aos="fade-in"
   data-aos-duration="1000"
   data-aos-easing="ease-in-out"
 >
-  <!-- Contenedor general -->
+  <!-- Fondo decorativo para escritorio -->
   <div
-    class="max-w-6xl mx-auto grid grid-cols-1 gap-10 items-center relative z-10"
-  >
-    <div
-    class="absolute inset-0 bg-[url('/images/espacio-acogedor.jpg')] bg-bottom bg-cover opacity-30"
-    style="background-attachment: scroll; transform: translateZ(0); background-position-y: -52%;"
-  ></div>  
+    aria-hidden="true"
+    class="absolute inset-0 bg-[url('/images/espacio-acogedor.jpg')] bg-bottom bg-cover opacity-30 hidden md:block"
+    style="background-position-y: -52%;"
+  ></div>
 
+  <!-- Contenido principal -->
+  <div class="max-w-6xl mx-auto grid grid-cols-1 gap-10 items-center relative z-10">
     <div
-      class="relative z-10 max-w-4xl mx-auto px-6 py-16 sm:px-8 sm:py-24 text-center  mt-6"
-      style="background-attachment: scroll; transform: translateZ(0);"
+      class="relative z-10 max-w-4xl mx-auto px-6 py-16 sm:px-8 sm:py-24 text-center mt-6"
       data-aos="fade-left"
       data-aos-delay="400"
     >
       <h2
+        id="por-que-elegirme"
         class="font-serif text-3xl sm:text-4xl font-semibold mb-6"
       >
         ¿Por qué elegirme?
@@ -31,19 +32,23 @@
       </p>
       <a
         href="/honorarios"
-        class="px-6 py-3 bg-[#1d3557] text-white text-center font-medium text-base sm:text-lg rounded-full shadow-md hover:bg-blue-700 hover:scale-105 transition-all duration-300 leading-snug break-words w-full sm:w-auto"
+        class="inline-block px-6 py-3 bg-[#1d3557] text-white font-medium text-base sm:text-lg rounded-full shadow-md
+               hover:bg-blue-700 hover:scale-105 transition-all duration-300 leading-snug"
+        aria-label="Ver honorarios y disponibilidad"
       >
         Honorarios & Disponibilidad
       </a>
     </div>
   </div>
 
-  <!-- Imagen de fondo mobile -->
-  <div class="absolute inset-0 md:hidden">
+  <!-- Fondo para mobile con imagen alternativa accesible -->
+  <div class="absolute inset-0 md:hidden" aria-hidden="true">
     <img
       src="/images/espacio-acogedor.jpg"
-      alt="Fondo acogedor"
-      class="w-full h-full object-contain object-center"
+      alt=""
+      class="w-full h-full object-cover object-center"
+      loading="lazy"
+      decoding="async"
     />
     <div class="absolute inset-0 bg-white/80"></div>
   </div>

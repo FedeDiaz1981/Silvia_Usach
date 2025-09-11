@@ -9,88 +9,64 @@ import FormularioContacto from "../components/sections/FormularioContacto.astro"
 ---
 
 <BaseLayout>
+  <!-- Presentación principal (incluir h1 SEO-friendly dentro del componente) -->
   <Presentacion />
 
+  <!-- Información sobre la terapia -->
   <SobreLaTerapia />
 
+  <!-- Biografía con botón de acción -->
   <Biografia mostrarBoton={true} />
 
   <!-- Separador Salud Mental -->
   <section
     class="w-full pt-10 pb-[10%] flex items-center justify-center relative overflow-hidden"
+    aria-labelledby="salud-mental-heading"
   >
     <div class="flex items-center justify-center text-center px-4">
-      <!-- Signo de exclamación izquierdo -->
-      <!-- <span
-        class="text-orange-500 text-5xl sm:text-7xl pulse-animation mr-4"
-        data-aos="fade-right"
-        data-aos-duration="700"
-      >
-        ¡
-      </span> -->
-
-      <!-- Texto principal -->
       <div
         class="flex flex-col items-center justify-center"
         data-aos="fade-up"
         data-aos-duration="1000"
       >
-        <!-- Línea superior -->
-        <!-- <div class="w-60 h-1 bg-orange-500 mb-4"></div> -->
-
         <h2
-          class="text-2xl text-bold sm:text-4xl uppercase font-bebas tracking-widest wave-text"
+          id="salud-mental-heading"
+          class="text-2xl sm:text-4xl uppercase font-bebas tracking-widest wave-text"
         >
           La salud física va de la mano de la salud mental.
         </h2>
-
-        <!-- Línea inferior -->
-        <!-- <div class="w-60 h-1 bg-orange-500 mt-4"></div> -->
 
         <p class="text-xl font-bold sm:text-base mt-4 max-w-xl">
           No sólo somos lo que se ve. Somos <span class="uppercase">cuerpo</span> y <span class="uppercase">mente</span>.
         </p>
       </div>
-
-      <!-- Signo de exclamación derecho -->
-      <!-- <span
-        class="text-orange-500 text-5xl sm:text-7xl pulse-animation ml-4"
-        data-aos="fade-left"
-        data-aos-duration="700"
-      >
-        !
-      </span> -->
     </div>
   </section>
 
+  <!-- Por qué elegirme -->
   <PorQueElegirme />
 
+  <!-- CTA de contacto gratuito -->
   <ContactoGratis />
 
+  <!-- Frase destacada -->
   <section
-    class="w-full py-16 px-6 "
+    class="w-full py-16 px-6"
     data-aos="fade-up"
     data-aos-duration="1000"
+    aria-labelledby="frase-transformacion"
   >
     <div class="max-w-4xl mx-auto text-center relative">
-      <!-- Línea superior -->
-      <!-- <div class="w-50 h-1  mx-auto mb-4"></div> -->
-
       <p
-        class="text-lg sm:text-xl leading-relaxed max-w-3xl mx-auto"
+        id="frase-transformacion"
+        class="text-xl sm:text-2xl leading-relaxed max-w-3xl mx-auto"
       >
-        Resulta más
-        sencillo señalar los errores ajenos que indagar, con honestidad, cuánto
-        nos afectan nuestras propias sombras. Renunciar a la idea de perfección
-        y dejar de culpar a otros es clave. El bienestar solo se alcanza
-        dedicando nuestra energía y esfuerzo a transformar lo que está en uno
-        mismo.
+        Resulta más sencillo señalar los errores ajenos que indagar, con honestidad, cuánto nos afectan nuestras propias sombras. Renunciar a la idea de perfección y dejar de culpar a otros es clave. El bienestar solo se alcanza dedicando nuestra energía y esfuerzo a transformar lo que está dentro de nosotros mismos.
       </p>
-
-      <!-- Línea inferior -->
       <div class="w-50 h-1 bg-[#1d3557] mx-auto mt-12"></div>
     </div>
   </section>
 
+  <!-- Formulario de contacto -->
   <FormularioContacto />
 </BaseLayout>

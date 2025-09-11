@@ -2,19 +2,28 @@
 const { mostrarBoton = false } = Astro.props;
 ---
 
-<section class="py-20 px-6" data-aos="fade-up" data-aos-duration="800">
+<section 
+  class="py-20 px-6" 
+  aria-labelledby="sobre-mi-titulo"
+  data-aos="fade-up" 
+  data-aos-duration="800"
+>
   <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+    
     <!-- Texto -->
     <div>
-      <h2 class="text-3xl sm:text-4xl font-serif font-semibold mb-6">
+      <h2 
+        id="sobre-mi-titulo" 
+        class="text-3xl sm:text-4xl font-serif font-semibold mb-6"
+      >
         Sobre mí
       </h2>
+
       <p class="text-lg font-serif leading-relaxed mb-5">
-        Soy Silvia Usach, psicóloga recibida de la Universidad de Buenos ires
-        (UBA) con más de 20 años de experiencia en el acompañamiento terapéutico
-        de personas adultas. Creo profundamente en el poder de la palabra y la
-        escucha activa para poder transformar aquello que nos frena
-        (inhibiciones, sintomas o angustia) en acciones que sean el motor de
+        Soy Silvia Usach, psicóloga recibida de la Universidad de Buenos Aires (UBA),
+        con más de 20 años de experiencia en el acompañamiento terapéutico de personas adultas.
+        Creo profundamente en el poder de la palabra y la escucha activa para transformar
+        aquello que nos frena (inhibiciones, síntomas o angustia) en acciones que impulsen
         nuestro desarrollo personal.
       </p>
 
@@ -23,7 +32,8 @@ const { mostrarBoton = false } = Astro.props;
           <div class="flex justify-center mt-6">
             <a
               href="/biografia"
-              class="px-6 py-3 bg-blue-600 text-white font-medium text-lg rounded-full shadow-md hover:bg-blue-700 hover:scale-105 transition-all duration-300"
+              class="px-6 py-3 bg-blue-600 text-white font-medium text-lg rounded-full shadow-md hover:bg-blue-700 hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-300"
+              aria-label="Conocer más sobre Silvia Usach"
             >
               Conocer más
             </a>
@@ -40,9 +50,13 @@ const { mostrarBoton = false } = Astro.props;
     >
       <img
         src="/images/silvia.png"
-        alt="Silvia Usach"
+        alt="Fotografía de Silvia Usach, psicóloga"
         class="w-[250px] rounded-full object-cover drop-shadow-xl"
+        loading="lazy"
+        width="250"
+        height="250"
       />
     </div>
+
   </div>
 </section>

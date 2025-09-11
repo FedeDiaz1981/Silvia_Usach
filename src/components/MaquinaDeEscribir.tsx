@@ -28,10 +28,15 @@ export default function MaquinaDeEscribir({
     }, velocidad);
 
     return () => clearInterval(interval);
-  }, [texto, velocidad]);
+  }, [texto, velocidad, onFinish]);
 
   return (
-    <h1 class={`whitespace-pre text-center font-serif ${clase}`}>
+    <h1
+      class={`whitespace-pre-line text-center font-serif ${clase}`}
+      aria-live="polite"
+      role="heading"
+      aria-level={1}
+    >
       {visibleText}
     </h1>
   );

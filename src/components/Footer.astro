@@ -1,9 +1,20 @@
 ---
 // src/components/Footer.astro
 ---
-<footer class="bg-gray-800 text-white text-center py-8 mt-20">
-  <p class="text-sm">&copy; {new Date().getFullYear()} Silvia Usach · Psicología · Todos los derechos reservados</p>
-  <p class="mt-2">
-    <a href="facetime:silvia.usach@example.com" class="underline hover:text-blue-300">Hablamos por FaceTime</a>
-  </p>
+<footer class="bg-gray-800 text-white text-center py-8 mt-20" aria-label="Pie de página del sitio">
+  <div class="max-w-4xl mx-auto px-4">
+    <p class="text-sm" aria-label="Derechos de autor">
+      &copy; {new Date().getFullYear()} Silvia Usach · Psicología · Todos los derechos reservados
+    </p>
+    <p class="mt-2">
+      <a
+        href="facetime:silvia.usach@example.com"
+        class="underline hover:text-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        rel="nofollow noopener"
+        aria-label="Contactar a Silvia Usach por FaceTime"
+      >
+        ¿Hablamos por FaceTime?
+      </a>
+    </p>
+  </div>
 </footer>
