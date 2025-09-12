@@ -1,4 +1,3 @@
-// src/pages/api/send-email.ts
 import type { APIRoute } from "astro";
 import nodemailer from "nodemailer";
 
