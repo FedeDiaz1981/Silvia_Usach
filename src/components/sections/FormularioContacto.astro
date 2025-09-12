@@ -134,7 +134,7 @@
             viewBox="0 0 24 24"
             aria-hidden="true"
           >
-            <path d="..."></path>
+            <path d="M20.52 3.48A11.91 11.91 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.12.55 4.19 1.6 6.03L0 24l6.2-1.63A11.92 11.92 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.19-1.24-6.19-3.48-8.52zM12 21.6c-1.87 0-3.69-.5-5.3-1.45l-.38-.22-3.68.97.98-3.58-.25-.37A9.61 9.61 0 0 1 2.4 12c0-5.3 4.3-9.6 9.6-9.6s9.6 4.3 9.6 9.6-4.3 9.6-9.6 9.6zm5.27-7.11c-.29-.14-1.73-.85-2-1-.27-.1-.46-.14-.65.14-.19.29-.75 1-.92 1.19-.17.19-.34.22-.63.07-.29-.14-1.22-.45-2.33-1.45-.86-.77-1.44-1.73-1.61-2.02-.17-.29-.02-.45.13-.59.13-.13.29-.34.43-.51.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.14-.65-1.56-.89-2.14-.23-.56-.48-.48-.65-.48-.17 0-.36 0-.55 0s-.51.07-.77.36c-.27.29-1.02 1-1.02 2.43s1.05 2.82 1.2 3.01c.14.19 2.06 3.14 5 4.41.7.31 1.25.5 1.67.64.7.22 1.34.19 1.84.12.56-.08 1.73-.71 1.98-1.39.25-.68.25-1.26.18-1.39-.07-.13-.26-.21-.55-.35z"/>
           </svg>
           <a
             href="https://wa.me/5491144110025?text=Hola%20Silvia%2C%20quisiera%20hacerte%20una%20consulta..."
@@ -159,7 +159,7 @@
             viewBox="0 0 24 24"
             aria-hidden="true"
           >
-            <path d="..."></path>
+            <path d="M2.01 6L12 13l9.99-7H2.01zM2 18V8l10 7 10-7v10H2z"/>
           </svg>
           <a
             href="https://mail.google.com/mail/?view=cm&fs=1&to=susach48@gmail.com"
@@ -174,6 +174,7 @@
     </div>
   </div>
 </section>
+
 <script type="module">
   const form = document.getElementById('contactForm');
   const responseMsg = document.getElementById('responseMsg');
@@ -188,7 +189,6 @@
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    // Disable botón para evitar doble envío
     submitBtn.disabled = true;
     submitBtn.classList.add('opacity-60', 'cursor-not-allowed');
     setStatus('Enviando...', true);
@@ -196,10 +196,8 @@
     try {
       const fd = new FormData(form);
       const payload = {
-        // Destinatario (por ahora lo ponemos fijo en cliente; ideal: definirlo en el servidor)
         to: 'susach48@gmail.com',
         subject: `Consulta web: ${fd.get('name') || 'Sin nombre'}`,
-        // Incluimos info útil en el cuerpo
         text: `
 Nombre: ${fd.get('name') || '-'}
 Email: ${fd.get('email') || '-'}
@@ -208,7 +206,6 @@ Ubicación: ${fd.get('location') || '-'}
 Mensaje:
 ${fd.get('message') || '-'}
         `.trim(),
-        // opcional: html si tu endpoint lo admite
         html: `
 <p><strong>Nombre:</strong> ${fd.get('name') || '-'}</p>
 <p><strong>Email:</strong> ${fd.get('email') || '-'}</p>
@@ -231,7 +228,6 @@ ${fd.get('message') || '-'}
         setStatus('¡Mensaje enviado correctamente!', true);
         form.reset();
       } else {
-        // Mensaje de error del servidor si existe
         const err = data?.error || 'Error enviando mail';
         setStatus(err, false);
       }
@@ -244,4 +240,3 @@ ${fd.get('message') || '-'}
     }
   });
 </script>
-
