@@ -174,3 +174,74 @@
     </div>
   </div>
 </section>
+<script type="module">
+  const form = document.getElementById('contactForm');
+  const responseMsg = document.getElementById('responseMsg');
+  const submitBtn = form.querySelector('button[type="submit"]');
+
+  function setStatus(message, ok = true) {
+    responseMsg.textContent = message;
+    responseMsg.classList.remove('hidden');
+    responseMsg.classList.toggle('text-green-600', ok);
+    responseMsg.classList.toggle('text-red-600', !ok);
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    // Disable botón para evitar doble envío
+    submitBtn.disabled = true;
+    submitBtn.classList.add('opacity-60', 'cursor-not-allowed');
+    setStatus('Enviando...', true);
+
+    try {
+      const fd = new FormData(form);
+      const payload = {
+        // Destinatario (por ahora lo ponemos fijo en cliente; ideal: definirlo en el servidor)
+        to: 'susach48@gmail.com',
+        subject: `Consulta web: ${fd.get('name') || 'Sin nombre'}`,
+        // Incluimos info útil en el cuerpo
+        text: `
+Nombre: ${fd.get('name') || '-'}
+Email: ${fd.get('email') || '-'}
+Celular: ${fd.get('phone') || '-'}
+Ubicación: ${fd.get('location') || '-'}
+Mensaje:
+${fd.get('message') || '-'}
+        `.trim(),
+        // opcional: html si tu endpoint lo admite
+        html: `
+<p><strong>Nombre:</strong> ${fd.get('name') || '-'}</p>
+<p><strong>Email:</strong> ${fd.get('email') || '-'}</p>
+<p><strong>Celular:</strong> ${fd.get('phone') || '-'}</p>
+<p><strong>Ubicación:</strong> ${fd.get('location') || '-'}</p>
+<p><strong>Mensaje:</strong></p>
+<p>${(fd.get('message') || '-').replace(/\n/g, '<br/>')}</p>
+        `.trim()
+      };
+
+      const res = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await res.json().catch(() => ({}));
+
+      if (res.ok) {
+        setStatus('¡Mensaje enviado correctamente!', true);
+        form.reset();
+      } else {
+        // Mensaje de error del servidor si existe
+        const err = data?.error || 'Error enviando mail';
+        setStatus(err, false);
+      }
+    } catch (err) {
+      console.error('Fetch error:', err);
+      setStatus('Error de red o servidor', false);
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.classList.remove('opacity-60', 'cursor-not-allowed');
+    }
+  });
+</script>
+
