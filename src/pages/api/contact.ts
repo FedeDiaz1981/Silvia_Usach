@@ -39,7 +39,7 @@ export const POST: APIRoute = async ({ request }) => {
     }
 
     // Configurar Nodemailer con Gmail
-    const transporter = nodemailer.createTransporter({
+    const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
         user: import.meta.env.SMTP_USER || 'federicodiaz1981@gmail.com',
