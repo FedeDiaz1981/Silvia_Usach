@@ -3,7 +3,7 @@ import preact from '@astrojs/preact';
 import node from '@astrojs/node';
 
 export default defineConfig({
-  output: 'server', // Cambiar de 'static' a 'server'
+  output: 'server', // Servidor con páginas estáticas prerenderizadas
   adapter: node({
     mode: 'standalone'
   }),
