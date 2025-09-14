@@ -42,15 +42,15 @@ export const POST: APIRoute = async ({ request }) => {
     const transporter = nodemailer.createTransporter({
       service: 'gmail',
       auth: {
-        user: 'federicodiaz1981@gmail.com',
-        pass: 'huwl zqcy velq ookk' // App Password de Gmail
+        user: import.meta.env.SMTP_USER || 'federicodiaz1981@gmail.com',
+        pass: import.meta.env.SMTP_PASS || 'huwl zqcy velq ookk'
       }
     });
 
     // Configurar el email
     const mailOptions = {
-      from: 'federicodiaz1981@gmail.com',
-      to: 'fediaz3100@gmail.com',
+      from: import.meta.env.SMTP_USER || 'federicodiaz1981@gmail.com',
+      to: import.meta.env.SMTP_TO || 'fediaz3100@gmail.com',
       replyTo: email,
       subject: `Nueva consulta: ${name}`,
       html: `
@@ -76,9 +76,16 @@ ${message}
     };
 
     // Enviar email
-    await transporter.sendMail(mailOptions);
+    console.log('Intentando enviar email...', {
+      from: mailOptions.from,
+      to: mailOptions.to,
+      subject: mailOptions.subject
+    });
 
+    const result = await transporter.sendMail(mailOptions);
+    
     console.log('Email enviado exitosamente:', {
+      messageId: result.messageId,
       name,
       email,
       phone,
@@ -88,7 +95,8 @@ ${message}
 
     return new Response(JSON.stringify({
       ok: true,
-      message: 'Mensaje enviado correctamente'
+      message: 'Mensaje enviado correctamente',
+      messageId: result.messageId
     }), {
       status: 200,
       headers: {
@@ -98,9 +106,17 @@ ${message}
 
   } catch (error) {
     console.error('Error procesando formulario:', error);
+    
+    // Log detallado del error
+    if (error instanceof Error) {
+      console.error('Error message:', error.message);
+      console.error('Error stack:', error.stack);
+    }
+    
     return new Response(JSON.stringify({
       ok: false,
-      error: 'Error interno del servidor'
+      error: 'Error interno del servidor',
+      details: error instanceof Error ? error.message : 'Error desconocido'
     }), {
       status: 500,
       headers: {

@@ -8,3 +8,9 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
+      - key: SMTP_USER
+        value: federicodiaz1981@gmail.com
+      - key: SMTP_PASS
+        value: huwl zqcy velq ookk
+      - key: SMTP_TO
+        value: fediaz3100@gmail.com
