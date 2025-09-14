@@ -9,6 +9,7 @@
     "deploy": "npm run build && npx gh-pages -d dist"
   },
   "dependencies": {
+    "@astrojs/node": "^9.4.3",
     "@astrojs/preact": "^4.1.0",
     "aos": "^2.3.4",
     "astro": "^5.8.0",
