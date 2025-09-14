@@ -12,5 +12,5 @@ services:
         value: federicodiaz1981@gmail.com
       - key: SMTP_PASS
         value: huwl zqcy velq ookk
-      - key: SMTP_TO
-        value: fediaz3100@gmail.com
+            - key: SMTP_TO
+              value: fedediazrock@gmail.com

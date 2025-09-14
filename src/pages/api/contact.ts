@@ -50,7 +50,7 @@ export const POST: APIRoute = async ({ request }) => {
     // Configurar el email
     const mailOptions = {
       from: import.meta.env.SMTP_USER || 'federicodiaz1981@gmail.com',
-      to: import.meta.env.SMTP_TO || 'fediaz3100@gmail.com',
+      to: import.meta.env.SMTP_TO || 'fedediazrock@gmail.com',
       replyTo: email,
       subject: `Nueva consulta: ${name}`,
       html: `
