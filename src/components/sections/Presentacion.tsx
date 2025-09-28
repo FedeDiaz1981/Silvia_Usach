@@ -35,10 +35,10 @@ export default function Presentacion() {
       <div class="relative z-10 flex flex-col items-center gap-8 sm:gap-28 pt-[8%] pb-[15%] max-w-4xl w-full">
         <header>
           <h1 class="text-5xl sm:text-6xl font-extrabold drop-shadow-md leading-tight">
-            Terapia Online
+            Lic. Silvia Usach
           </h1>
           <p class="text-2xl sm:text-3xl mt-4 font-semibold">
-            Lic. Silvia Usach
+            Terapia Psicológica
           </p>
         </header>
 
